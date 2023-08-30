@@ -21,4 +21,4 @@ jobs:
       - name: deploy dev + staging
         if: ${{ github.event_name == 'push' }}
         run:
-          echo "Deploy production"
+          echo "Deploy dev + staging"
