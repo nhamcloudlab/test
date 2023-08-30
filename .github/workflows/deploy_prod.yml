@@ -1,8 +1,8 @@
 on:
   release:
-    types: [released]
+    types: [released,created,published]
 
-name: Deploy code
+name: Deploy prod
 
 jobs:
   build:
