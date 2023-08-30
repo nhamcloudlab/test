@@ -1,0 +1,24 @@
+on:
+  release:
+    types: [published]
+  push:
+    branches:
+    - main
+
+name: Create Release
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: deploy prod
+        if: github.event.type == ReleaseEvent
+        run:
+          echo "Deploy production"
+      - name: deploy dev + staging
+        if: github.event.type == PushEvent
+        run:
+          echo "Deploy production"
