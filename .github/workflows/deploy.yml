@@ -1,11 +1,11 @@
 on:
   release:
-    types: [published]
+    types: [created]
   push:
     branches:
     - main
 
-name: Create Release
+name: Deploy code
 
 jobs:
   build:
