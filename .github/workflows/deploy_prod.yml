@@ -1,0 +1,21 @@
+on:
+  release:
+    types: [released]
+
+name: Deploy code
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: deploy prod
+        if: ${{ github.event_name == 'release' }}
+        run:
+          echo "Deploy production"
+      - name: deploy dev + staging
+        if: ${{ github.event_name == 'push' }}
+        run:
+          echo "Deploy dev + staging"
