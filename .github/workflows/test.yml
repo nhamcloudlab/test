@@ -22,7 +22,7 @@ jobs:
       - uses: zwaldowski/semver-release-action@v3
         id: semantic-version
         with:
-          bump: ${{ github.event.inputs.message }}
+          bump: ${{ github.event.inputs.type }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Release
         id: create_release
